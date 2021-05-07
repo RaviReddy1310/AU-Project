@@ -1,0 +1,20 @@
+<app-home></app-home>
+
+<br>
+
+<h3>ALL USERS</h3>
+<table id = "all">
+    <tr> 
+        <th>ID</th> 
+        <th>USERNAME</th>
+        <th>EMAIL</th> 
+        <th>ROLE</th> 
+    </tr> 
+
+    <tr *ngFor="let user of users"> 
+        <td>{{user.id}}</td> 
+        <td>{{user.username}}</td> 
+        <td>{{user.email}}</td> 
+        <td>{{user.role}}</td>
+    </tr> 
+</table>

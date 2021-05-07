@@ -1,0 +1,17 @@
+<app-home></app-home>
+
+<br>
+<h3>ADD FILE</h3>
+
+<div>
+    <input type="file" #fileInput (change)="onFileSelected($event)">
+    <button (click) = "submit()">Upload</button>
+</div>
+<div *ngIf = "flag === true">
+    <br>
+    Uploading is in progess....
+</div>
+<br>
+<div>
+    <button (click) = "goBack()">back</button>
+</div>

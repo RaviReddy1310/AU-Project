@@ -1,0 +1,25 @@
+<app-home></app-home>
+
+<br>
+<h3>ALL VERSIONS</h3>
+<button (click) = "goBack()">Back</button>
+<br><br>
+<div *ngIf = "materials">
+    <table id = "all">
+        <tr> 
+            <th>VERSION ID</th> 
+            <th>FILENAME</th>
+            <th>OPERATIONS</th> 
+        </tr> 
+    
+        <tr *ngFor="let material of materials"> 
+            <td>{{material.id}}</td> 
+            <td>{{material.filename}}</td>
+            <td>
+                <button (click) = "downloadfile(material.filedata, material.filetype)">Download File</button>
+                <button (click) = "deleteVersion(material.id)">Delete Version</button>
+            </td>
+        </tr> 
+    </table>
+
+</div>

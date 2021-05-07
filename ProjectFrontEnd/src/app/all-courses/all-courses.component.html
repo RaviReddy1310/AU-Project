@@ -1,0 +1,60 @@
+<app-home></app-home>
+<br>
+<div>
+    <label>Course Name:</label>
+    <input id="search-box" type = "text" [(ngModel)]="search" placeholder="Course Search By Name" />
+    <button (click) = "searchByname(search)">Search</button>
+    <br><br>
+    <button *ngIf = "csearch === true" (click) = "viewall()">View all courses</button>
+</div>
+<br>
+<div>
+    <button routerLink = '/add-course'>Add Course</button>
+</div>
+
+<div *ngIf = "all === true">
+    <h3>ALL COURSES</h3>
+    <table id = "all">
+        <tr> 
+            <th>ID</th> 
+            <th>COURSE NAME</th>
+            <th>COURSE DESCRIPTION</th> 
+            <th>COURSE SKILLS</th>
+            <th>OPERATION</th>
+        </tr> 
+
+        <tr *ngFor="let course of courses"> 
+            <td>{{course.id}}</td> 
+            <td>{{course.name}}</td> 
+            <td>{{course.description}}</td>
+            <td>{{course.skills}}</td>
+            <td>
+                <button *ngIf = "course.trainerid !== user.id" (click) = "addCourseToStudy(course.id)">Enroll</button>
+            </td>
+        </tr> 
+    </table>
+</div>
+
+<div *ngIf = "csearch === true">
+    <h3>SEARCH RESULTS</h3>
+        <br>
+        <table id = "all">
+            <tr> 
+                <th>ID</th> 
+                <th>COURSE NAME</th>
+                <th>COURSE DESCRIPTION</th>
+                <th>COURSE SKILLS</th>
+                <th>OPERATION</th>
+            </tr> 
+        
+            <tr *ngFor="let course of searchCourses"> 
+                <td>{{course.id}}</td> 
+                <td>{{course.name}}</td>
+                <td>{{course.description}}</td>
+                <td>{{course.skills}}</td>
+                <td>
+                    <button *ngIf = "course.trainerid !== user.id" (click) = "addCourseToStudy(course.id)">Enroll</button>
+                </td>
+            </tr> 
+        </table>
+</div>

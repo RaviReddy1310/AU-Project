@@ -1,0 +1,26 @@
+<app-home></app-home>
+
+<br>
+<h3>MY COURSES</h3>
+<table id = "all">
+    <tr> 
+        <th>ID</th> 
+        <th>COURSENAME</th>
+        <th>COURSE DESCRIPTION</th> 
+        <th>COURSE SKILLS</th>
+        <th>TRAINER ID</th>
+        <th>OPERATION</th>
+    </tr> 
+
+    <tr *ngFor="let course of courses"> 
+        <td>{{course.id}}</td> 
+        <td>{{course.name}}</td> 
+        <td>{{course.description}}</td>
+        <td>{{course.skills}}</td>
+        <td>{{course.trainerid}}</td>
+        <td>
+            <button (click) = "dropCourse(course.id)">Drop Course</button>
+            <button (click) = "downloadContent(course.id)">Download Content</button>
+        </td>
+    </tr> 
+</table>

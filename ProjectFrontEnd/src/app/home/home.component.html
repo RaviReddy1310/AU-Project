@@ -1,0 +1,26 @@
+<div class="flex-container" *ngIf = "user">
+
+    <div>
+      <a routerLink = '/trends'>Trends</a>
+    </div>
+    
+    <div>
+      <a routerLink = '/all-courses'>All Courses</a>
+    </div>
+
+    <div *ngIf = "user.role === 'ADMIN'">
+      <a routerLink = '/all-users'>All Users</a>
+    </div>
+
+    <div>
+      <a routerLink = '/my-courses'> My Courses</a>
+    </div>
+
+    <div>
+      <a routerLink = '/trainer-courses'>Trainer Courses</a>
+    </div>
+
+    <div>
+      <button (click) = "signout()">SignOut</button>
+    </div>
+</div>
